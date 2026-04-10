@@ -884,9 +884,9 @@ def setup_gui(
     # dual-stack systems, "0.0.0.0" is IPv4-only, "127.0.0.1" is loopback,
     # and finally fall back to Gradio's share mode.
     bind_addresses = []
+    bind_addresses.append("0.0.0.0")
     if _has_ipv6():
         bind_addresses.append("[::]")
-    bind_addresses.append("0.0.0.0")
     bind_addresses.append("127.0.0.1")
 
     for addr in bind_addresses:
